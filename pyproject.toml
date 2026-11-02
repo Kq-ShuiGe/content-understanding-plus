@@ -1,10 +1,10 @@
-﻿[build-system]
+[build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "content-understanding-plus"
-version = "3.1.0"
+version = "3.1.1"
 description = "B绔欒棰戝唴瀹圭悊瑙ｏ細瀹樻柟AI鎬荤粨 鈫?CC瀛楀箷 鈫?鏈湴杞啓锛屼笁璺厹搴曪紝杈撳嚭浜鸿瘽鎬荤粨銆侻aiBot / OneBot / NoneBot2 閫氱敤"
 readme = "README.md"
 requires-python = ">=3.10"
