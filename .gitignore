@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+sidecar/config.toml
+config.toml.bak*
+*.log
