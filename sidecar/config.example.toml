@@ -1,0 +1,57 @@
+# content-understanding 侧挂服务配置
+# 复制本文件为 config.toml 再改。改完重启服务。
+
+[onebot]
+# NapCat：设置 → 网络 → 新建「WebSocket 客户端」，地址填 ws://127.0.0.1:3001
+# （如果你已经在用正向 WS，就别动它，直接在上面再加一个客户端，端口填 3001）
+# Lagrange：appsettings.json 里 ws 段同理
+ws_url = "ws://127.0.0.1:3001"
+
+# NapCat 里填的 token，没设就留空
+access_token = ""
+
+# 只在这些群响应；留空 = 所有群
+group_allow = ["123456789"]
+
+# 只在这些好友的私聊响应；留空 = 所有私聊
+private_allow = []
+
+# 默认就直接做深度总结（含字幕/转写），还是先用快速模式（只有官方总结）
+# 快速模式几百毫秒；深度模式字幕总结约 3–10 秒，转写要几分钟
+deep_by_default = true
+
+# 深度处理时先回一句「我去看看」，避免对方以为没反应
+notify_when_deep = true
+
+# 回复时引用原消息
+quote_reply = true
+
+
+[parse]
+enable_ai_summary = true          # 用 B站官方 AI 总结（需要登录态）
+enable_subtitle_fallback = true   # 没总结就抓 CC 字幕
+enable_asr_fallback = false       # 没字幕就本地转写（慢，需 faster-whisper）
+cache_ttl_seconds = 1800
+
+asr_model = "small"
+ffmpeg_path = ""                  # 留空自动找 PATH
+whisper_model_dir = ""            # 留空按模型名自动下载
+asr_device = "cpu"                # cpu / cuda
+asr_compute_type = "int8"         # int8 / float16
+
+
+[llm]
+# 任何 OpenAI 兼容接口都行：DeepSeek / Ollama / LM Studio / 中转站
+base_url = "https://api.deepseek.com/v1"
+api_key = "sk-填你的"
+model = "deepseek-chat"
+timeout = 90
+
+
+[credential]
+# 可选。不填也能拿标题/UP/简介，但没有官方 AI 总结和字幕。
+# 获取方式：浏览器登录 B站 → F12 → Application → Cookies → 抄这几个值
+sessdata = ""
+bili_jct = ""
+buvid3 = ""
+dedeuserid = ""

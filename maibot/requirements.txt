@@ -1,0 +1,7 @@
+bilibili-api-python>=17.4.0
+httpx>=0.27.0
+qrcode>=8.0
+Pillow>=10.0.0
+
+# 可选：只有启用 ASR 兜底（enable_asr_fallback = true）时才需要
+# faster-whisper>=1.0.0

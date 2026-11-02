@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "id": "YukiSakiko.content_understanding_plugin",
+  "name": "麦麦视频内容理解插件 Plus（字幕/转写增强版）",
+  "version": "3.0.0",
+  "description": "识别聊天中的B站/抖音视频链接：优先用官方AI总结；没有时抓CC字幕让模型总结；再没有就用本地 faster-whisper 转写。支持 /cu_full 命令做深度解析并单独推送结果。",
+  "author": {
+    "name": "YukiSakiko (original) / Plus fork"
+  },
+  "license": "MIT",
+  "host_application": {
+    "min_version": "0.10.0",
+    "max_version": "1.14.5"
+  },
+  "sdk": {
+    "min_version": "2.3.0",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [
+    {
+      "type": "python_package",
+      "name": "bilibili-api-python",
+      "version_spec": ">=17.4.0"
+    },
+    {
+      "type": "python_package",
+      "name": "httpx",
+      "version_spec": ">=0.27.0"
+    },
+    {
+      "type": "python_package",
+      "name": "qrcode",
+      "version_spec": ">=8.0"
+    },
+    {
+      "type": "python_package",
+      "name": "Pillow",
+      "version_spec": ">=10.0.0"
+    }
+  ],
+  "capabilities": [
+    "send.text",
+    "send.image",
+    "llm.generate"
+  ],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": ["zh-CN"]
+  }
+}

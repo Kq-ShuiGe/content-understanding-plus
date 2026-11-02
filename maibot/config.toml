@@ -1,0 +1,31 @@
+[plugin]
+enabled = true
+config_version = "1.0.0"
+
+[parse]
+enable_ai_summary = true
+enable_in_group = true
+enable_in_private = true
+cache_ttl_seconds = 1800
+enable_douyin = false
+# 没有官方 AI 总结时，抓 B站 CC 字幕交给模型总结
+enable_subtitle_fallback = true
+# 既没总结也没字幕时，本地 faster-whisper 转写（较慢，需自行安装）
+enable_asr_fallback = false
+asr_model = "small"
+# 留空则自动查找 ffmpeg
+ffmpeg_path = ""
+# 留空则按 asr_model 自动下载模型
+whisper_model_dir = ""
+asr_device = "cpu"
+asr_compute_type = "int8"
+
+[credential]
+sessdata = ""
+bili_jct = ""
+buvid3 = ""
+dedeuserid = ""
+douyin_cookie = ""
+
+[permission]
+admin_users = []
